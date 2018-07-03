@@ -8,16 +8,19 @@
 
 (def activies
   [{:verb    "seen"
-    :objects ["Instagram posts"
-              "dank memes"
+    :objects ["Dwayne Johnson Instagram posts"
+              "Distracted Boyfriend memes"
               "Trump news"
-              "all /r/aww top posts"]}
+              "/r/aww top posts"
+              "xkcd comics"]}
    {:verb    "watched"
-    :objects ["episodes of Stranger Things"
+    :objects ["Stranger Things episodes"
               "World Cup matches"
               "Marvel movies"
-              "Beyonce visual albums"
-              "Masterchef Australia"]}
+              "Beyoncé visual albums"
+              "Masterchef Australia"
+              "Falcon 9 launches"
+              "Korean skincare videos"]}
    {:verb    "listened to"
     :objects ["Björk albums"
               "Ira Glass podcasts"
