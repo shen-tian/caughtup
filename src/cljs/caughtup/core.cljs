@@ -72,21 +72,30 @@
 
 
 (defn page [ratom]
-  [:div {:style {:display        :flex
-                 :flex-direction :column
-                 :align-items    :center
-                 :font-family    font-stack}}
-   [:img {:style {:margin-top "30vh"
-                  :width      "80%"
-                  :max-width  "400px"}
-          :src   "/img/check.png"}]
-   [:h3 {:style {:font-size  "20px"
-                 :line-height 1.8
-                 :margin     "30px"
-                 :text-align :center}}
-    "You've " (:activity @ratom) " from the past " (:period @ratom) "."]
-   [:p {:style {:margin "20vh 5px"
-                :color "#ccc"}}
+  [:div {:style {:display         :flex
+                 :flex-direction  :column
+                 :align-items     :center
+                 :justify-content :space-between
+                 :height          "90vh"
+                 :font-family     font-stack}}
+   [:div ""]
+   [:div {:style {:display        :flex
+                  :flex-direction :column
+                  :align-items    :center}}
+    [:img {:style {:width     "80%"
+                   :max-width "400px"}
+           :src   "/img/check.png"}]
+    [:h2 {:style {:font-size "24px"
+                  :margin    "15px"}}
+     "You're All Caught Up"]
+    [:h3 {:style {:font-size   "18px"
+                  :color "#aaa"
+                  :line-height 1.6
+                  :margin      "15px"
+                  :text-align  :center}}
+     "You've " (:activity @ratom) " from the past " (:period @ratom) "."]]
+   [:p {:style {:margin "20px 5px"
+                :color  "#ccc"}}
     "You are free to do something else"]])
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
