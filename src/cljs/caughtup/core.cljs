@@ -1,15 +1,10 @@
 (ns caughtup.core
   (:require
-   [reagent.core :as reagent]
-   ))
+   [reagent.core :as reagent]))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Vars
-
-(defonce app-state
-  (reagent/atom {:activity "see all new posts"
-                 :period "21 hours"}))
 
 (def activies
   [{:verb    "seen"
@@ -57,6 +52,10 @@
 (defn period []
   (let [{:keys [unit max]} (rand-nth periods)]
     (str (+ 2 (rand-int (- max 2))) " " unit)))
+
+(defonce app-state
+  (reagent/atom {:activity (activity)
+                 :period (period)}))
 
 (defn rotate []
   (reset! app-state {:activity (activity)
