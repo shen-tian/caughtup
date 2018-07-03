@@ -83,7 +83,7 @@
                  :text-align :center}}
     "You've " (:activity @ratom) " from the past " (:period @ratom)]
    [:p {:style {:margin "20vh 5px"
-                :color "#eee"}}
+                :color "#ccc"}}
     "You are free to do something else"]])
 
 
