@@ -81,14 +81,13 @@
                   :max-width  "400px"}
           :src   "/img/check.png"}]
    [:h3 {:style {:font-size  "20px"
+                 :line-height 1.8
                  :margin     "30px"
                  :text-align :center}}
-    "You've " (:activity @ratom) " from the past " (:period @ratom)]
+    "You've " (:activity @ratom) " from the past " (:period @ratom) "."]
    [:p {:style {:margin "20vh 5px"
                 :color "#ccc"}}
     "You are free to do something else"]])
-
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Initialize App
