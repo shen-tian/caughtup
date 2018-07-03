@@ -4,3 +4,6 @@
 /resources/public/js
 out
 /.nrepl-port
+/.DS_Store
+/resources/.DS_Store
+/resources/public/.DS_Store
