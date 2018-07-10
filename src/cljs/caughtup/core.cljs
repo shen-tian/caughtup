@@ -12,7 +12,8 @@
               "Distracted Boyfriend memes"
               "Trump news"
               "/r/aww top posts"
-              "xkcd comics"]}
+              "xkcd comics"
+              "art"]}
    {:verb    "watched"
     :objects ["Stranger Things episodes"
               "World Cup matches"
@@ -30,7 +31,8 @@
     :objects ["Ed Young articles"
               "Erza Klein interviews"
               "Westworld thinkpieces"
-              "McSweeney's listicles"]}])
+              "McSweeney's listicles"
+              "comments on that Gizmodo article"]}])
 
 (def periods
   [{:unit "hours"
