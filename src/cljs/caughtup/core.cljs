@@ -1,6 +1,7 @@
 (ns caughtup.core
   (:require
-   [reagent.core :as reagent]))
+   [reagent.core :as reagent]
+   [reanimated.core :as anim]))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -62,15 +63,33 @@
   (reagent/atom {:activity (activity)
                  :period (period)}))
 
+(defonce opacity
+  (reagent/atom 1))
+
 (defn rotate []
   (reset! app-state {:activity (activity)
-                     :period   (period)}))
+                     :period   (period)})
+  (reset! opacity 1)
+  (.setTimeout js/window #(reset! opacity 0)
+               6000))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Page
 
 (def font-stack "-apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif")
 
+
+(defn main-text [ratom]
+  (let [render-opacity (anim/interpolate-to opacity)]
+    (fn [ratom]
+      #_(.log js/console "render")
+      [:h3 {:style {:font-size   "18px"
+                    :opacity     @render-opacity
+                    :color       "#aaa"
+                    :line-height 1.6
+                    :margin      "15px"
+                    :text-align  :center}}
+       "You've " (:activity @ratom) " from the past " (:period @ratom) "."])))
 
 
 (defn page [ratom]
@@ -90,12 +109,7 @@
     [:h2 {:style {:font-size "24px"
                   :margin    "15px"}}
      "You're All Caught Up"]
-    [:h3 {:style {:font-size   "18px"
-                  :color "#aaa"
-                  :line-height 1.6
-                  :margin      "15px"
-                  :text-align  :center}}
-     "You've " (:activity @ratom) " from the past " (:period @ratom) "."]]
+    [main-text ratom]]
    [:p {:style {:margin "20px 5px"
                 :color  "#ccc"}}
     "You are free to do something else"]])
