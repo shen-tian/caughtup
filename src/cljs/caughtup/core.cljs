@@ -73,12 +73,15 @@
 (defonce opacity
   (reagent/atom 1))
 
+(defn fade []
+  (.setTimeout js/window #(reset! opacity 0)
+               6000))
+
 (defn rotate []
   (reset! app-state {:activity (activity)
                      :period   (period)})
   (reset! opacity 1)
-  (.setTimeout js/window #(reset! opacity 0)
-               6000))
+  (fade))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Page
@@ -136,4 +139,5 @@
 (defn ^:export main []
   (dev-setup)
   (reload)
+  (fade)
   (.setInterval js/window rotate 7000))
