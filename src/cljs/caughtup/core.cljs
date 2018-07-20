@@ -11,6 +11,7 @@
   [{:verb    "seen"
     :objects ["Dwayne Johnson Instagram posts"
               "Distracted Boyfriend memes"
+              "Facebook posts by your ex"
               "Trump news"
               "/r/aww top posts"
               "xkcd comics"
@@ -22,17 +23,23 @@
               "Beyoncé visual albums"
               "Masterchef Australia"
               "Falcon 9 launches"
+              "Rick & Morty theory videos"
+              "Honest Trailers"
+              "Netflix originals"
+              "Last Week Tonight snippets available on YouTube"
               "Korean skincare videos"]}
    {:verb    "listened to"
     :objects ["Björk albums"
               "Ira Glass podcasts"
-              "Lofi Wu Tang Clan covers"
+              "lofi hip hop beats to relax/study to"
               "Guilty Feminist episodes"]}
    {:verb    "read"
     :objects ["Ed Young articles"
               "Erza Klein interviews"
               "Westworld thinkpieces"
               "McSweeney's listicles"
+              "thinkpieces on The Atlantic"
+              "AV Club episode recaps"
               "comments on that Gizmodo article"]}])
 
 (def periods
