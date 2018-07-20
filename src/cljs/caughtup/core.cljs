@@ -115,4 +115,4 @@
 (defn ^:export main []
   (dev-setup)
   (reload)
-  (.setInterval js/window rotate 5000))
+  (.setInterval js/window rotate 7000))
